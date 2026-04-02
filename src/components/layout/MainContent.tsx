@@ -1,5 +1,6 @@
 import RoleSwitcher from "../common/RoleSwitcher";
 import DarkModeToggle from "../common/DarkModeToggle";
+import SummaryCardsRow from "../dashboard/SummaryCardsRow";
 
 export default function MainContent() {
   return (
@@ -25,6 +26,10 @@ export default function MainContent() {
           <DarkModeToggle />
         </div>
       </header>
+
+      <div className="mt-8">
+        <SummaryCardsRow />
+      </div>
     </main>
   );
 }
