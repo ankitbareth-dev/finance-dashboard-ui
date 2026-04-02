@@ -1,75 +1,142 @@
-# React + TypeScript + Vite
+# Finance Dashboard UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend-only finance dashboard built with React, TypeScript, Vite, and Tailwind CSS.  
+The app is structured as an assignment-ready submission that demonstrates dashboard design, transactions management, role-based UI behavior, shared state, responsive layouts, and a few optional enhancements.
 
-Currently, two official plugins are available:
+## Setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Production checks:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run lint
 ```
+
+## What’s Included
+
+- Dashboard overview with:
+  - Total balance, income, and expenses summary cards
+  - Time-based balance trend visualization
+  - Categorical spending breakdown
+  - Insight cards for top category, monthly comparison, savings rate, and largest expense
+  - Budget utilization section
+- Transactions experience with:
+  - Search
+  - Filter by type
+  - Filter by category
+  - Sort by date or amount
+  - Empty state handling
+  - CSV export
+- Role-based frontend simulation:
+  - `Viewer` can inspect data
+  - `Admin` can add, edit, delete, and export transactions
+- Shared state management using a React context provider
+- Local persistence using `localStorage`
+- Light and dark mode
+- Additional pages for reports, budget, and settings to make the navigation feel complete
+
+## Assignment Mapping
+
+### 1. Dashboard Overview
+
+Implemented in the overview view with:
+
+- Financial summary cards
+- Balance trend chart
+- Spending breakdown donut
+- Insight tiles
+- Budget utilization bars
+
+### 2. Transactions Section
+
+Implemented in the transactions view with:
+
+- Transaction table showing date, description, category, type, and amount
+- Search, filtering, and sorting
+- Admin-only add/edit/delete actions
+- Empty state when filters return no matches
+
+### 3. Basic Role Based UI
+
+Implemented via the role switcher in the header and settings view.
+
+- `Viewer`: read-only experience
+- `Admin`: management actions enabled
+
+### 4. Insights Section
+
+Implemented in the overview and reports views:
+
+- Highest spending category
+- Monthly comparison
+- Savings rate
+- Largest expense
+- Category mix and report cards
+
+### 5. State Management
+
+Managed centrally in `FinanceAppProvider`:
+
+- Transactions data
+- Current role
+- Current theme
+- Active view
+- Search/filter/sort state
+- Toast feedback
+
+### 6. UI and UX Expectations
+
+- Responsive sidebar + content layout
+- Light and dark visual systems
+- Empty states
+- Smooth transitions and polished feedback
+
+## Optional Enhancements Included
+
+- Dark mode
+- Local storage persistence
+- CSV export
+- Toast notifications
+- Modal-based transaction creation/editing
+
+## Design Reference
+
+The UI implementation was shaped around the reference images supplied with the assignment prompt:
+
+- Light overview dashboard
+- Light transactions dashboard
+- Dark overview dashboard
+- Dark transactions dashboard
+
+Those references informed the visual direction for:
+
+- Cream light theme and charcoal dark theme
+- Left navigation rail
+- Header controls
+- Dashboard card composition
+- Transactions management layout
+
+## Project Structure
+
+```text
+src/
+  components/
+    common/
+    dashboard/
+    layout/
+    transactions/
+  context/
+  data/
+  utils/
+```
+
+## Notes
+
+- The app uses mock data only and does not depend on a backend.
+- Transactions are persisted locally for demo purposes.
+- The current implementation is intentionally frontend-focused to match the assignment scope.

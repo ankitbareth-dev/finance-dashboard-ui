@@ -1,187 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  /* Surfaces */
-  --surface: #fbf9f6;
-  --surface-lowest: #ffffff;
-  --surface-low: #f3f0ea;
-  --surface-mid: #ebe7e0;
-  --surface-high: #e2ded5;
-  --surface-highest: #d9d5cb;
-
-  /* Text */
-  --on-surface: #1c1c28;
-  --on-surface-variant: #6b6b80;
-  --on-surface-muted: #9898a8;
-
-  /* Accents */
-  --primary: #0a7b61;
-  --primary-hover: #065f4a;
-  --primary-soft: rgba(10, 123, 97, 0.08);
-  --secondary: #b8952e;
-  --secondary-soft: rgba(184, 149, 46, 0.08);
-  --secondary-glow: rgba(184, 149, 46, 0.4);
-
-  /* Semantic */
-  --income: #0a7b61;
-  --income-soft: rgba(10, 123, 97, 0.08);
-  --expense: #c94444;
-  --expense-soft: rgba(201, 68, 68, 0.08);
-
-  /* Categories */
-  --cat-salary: #0a7b61;
-  --cat-salary-bg: #e6f7ef;
-  --cat-rent: #7c5cdb;
-  --cat-rent-bg: #ede8fe;
-  --cat-transport: #3a7bd5;
-  --cat-transport-bg: #e3f0fd;
-  --cat-shopping: #c44569;
-  --cat-shopping-bg: #fce8ec;
-  --cat-food: #c47d15;
-  --cat-food-bg: #fef3e2;
-  --cat-freelance: #8b5cf6;
-  --cat-freelance-bg: #f0e8fd;
-  --cat-utilities: #d97706;
-  --cat-utilities-bg: #fef0e5;
-  --cat-other: #6b6b80;
-  --cat-other-bg: #f0eeeb;
-
-  /* Effects */
-  --ghost-border: rgba(28, 28, 40, 0.12);
-  --shadow-ambient: 0px 12px 32px rgba(28, 28, 40, 0.04);
-  --shadow-ambient-hover: 0px 16px 40px rgba(28, 28, 40, 0.07);
-  --shadow-primary: 0px 4px 16px rgba(10, 123, 97, 0.25);
-
-  /* Glass */
-  --glass-bg: rgba(251, 249, 246, 0.72);
-  --glass-border: rgba(251, 249, 246, 0.2);
+  --surface: #fcfbf8;
+  --panel: #ffffff;
+  --panel-muted: #f5f1ea;
+  --panel-elevated: #fffcf8;
+  --on-surface: #141414;
+  --on-surface-variant: #5f6874;
+  --on-surface-muted: #95a0ae;
+  --muted-accent: #89a0c1;
+  --primary: #0e7c63;
+  --primary-soft: rgba(14, 124, 99, 0.1);
+  --income: #0e7c63;
+  --income-soft: rgba(14, 124, 99, 0.12);
+  --expense: #d21f1f;
+  --expense-soft: rgba(210, 31, 31, 0.12);
+  --ghost-border: rgba(20, 20, 20, 0.09);
+  --track: #ece8e1;
+  --trend-fill: #cfe4de;
+  --chart-1: #7b61ff;
+  --chart-2: #3f7ae0;
+  --chart-3: #d84a77;
+  --chart-4: #0b7c64;
+  --budget-1: #0b7c64;
+  --budget-2: #c79c1b;
+  --budget-3: #bf1f1f;
+  --accent-violet: #7b61ff;
+  --accent-violet-bg: #f1ebff;
+  --accent-mint: #0e7c63;
+  --accent-mint-bg: #e7f5f0;
+  --accent-rose: #cf3f67;
+  --accent-rose-bg: #fdecef;
+  --shadow-panel: 0 16px 40px rgba(15, 23, 42, 0.05);
 }
 
 .dark {
-  --surface: #111118;
-  --surface-lowest: #1a1a24;
-  --surface-low: #1f1f2a;
-  --surface-mid: #252532;
-  --surface-high: #2c2c3a;
-  --surface-highest: #343444;
-
-  --on-surface: #eeeef0;
-  --on-surface-variant: #8b8b9e;
-  --on-surface-muted: #5e5e72;
-
-  --primary: #22c993;
-  --primary-hover: #1db882;
-  --primary-soft: rgba(34, 201, 147, 0.1);
-  --secondary: #d4aa3c;
-  --secondary-soft: rgba(212, 170, 60, 0.1);
-  --secondary-glow: rgba(212, 170, 60, 0.35);
-
-  --income: #22c993;
-  --income-soft: rgba(34, 201, 147, 0.1);
-  --expense: #e86060;
-  --expense-soft: rgba(232, 96, 96, 0.1);
-
-  --cat-salary: #34d399;
-  --cat-salary-bg: #142820;
-  --cat-rent: #a78bfa;
-  --cat-rent-bg: #1e1830;
-  --cat-transport: #60a5fa;
-  --cat-transport-bg: #141c2c;
-  --cat-shopping: #f472b6;
-  --cat-shopping-bg: #28141c;
-  --cat-food: #fbbf24;
-  --cat-food-bg: #282014;
-  --cat-freelance: #a78bfa;
-  --cat-freelance-bg: #1c1428;
-  --cat-utilities: #fbbf24;
-  --cat-utilities-bg: #281c10;
-  --cat-other: #8b8b9e;
-  --cat-other-bg: #1c1c24;
-
+  --surface: #11111a;
+  --panel: #1a1b26;
+  --panel-muted: #232434;
+  --panel-elevated: #171823;
+  --on-surface: #f5f6fb;
+  --on-surface-variant: #a5b0c3;
+  --on-surface-muted: #667188;
+  --muted-accent: #7b88a7;
+  --primary: #119b7b;
+  --primary-soft: rgba(17, 155, 123, 0.14);
+  --income: #119b7b;
+  --income-soft: rgba(17, 155, 123, 0.12);
+  --expense: #ff7a7a;
+  --expense-soft: rgba(255, 122, 122, 0.12);
   --ghost-border: rgba(255, 255, 255, 0.08);
-  --shadow-ambient: 0px 12px 32px rgba(0, 0, 0, 0.4);
-  --shadow-ambient-hover: 0px 16px 40px rgba(0, 0, 0, 0.55);
-  --shadow-primary: 0px 4px 16px rgba(34, 201, 147, 0.2);
-
-  --glass-bg: rgba(17, 17, 24, 0.75);
-  --glass-border: rgba(26, 26, 36, 0.5);
+  --track: #253049;
+  --trend-fill: rgba(17, 155, 123, 0.18);
+  --chart-1: #8a68ef;
+  --chart-2: #4a86e8;
+  --chart-3: #d9527c;
+  --chart-4: #169b7a;
+  --budget-1: #169b7a;
+  --budget-2: #f6aa1c;
+  --budget-3: #ff3131;
+  --accent-violet: #8a68ef;
+  --accent-violet-bg: rgba(138, 104, 239, 0.12);
+  --accent-mint: #119b7b;
+  --accent-mint-bg: rgba(17, 155, 123, 0.12);
+  --accent-rose: #d9527c;
+  --accent-rose-bg: rgba(217, 82, 124, 0.12);
+  --shadow-panel: 0 20px 45px rgba(0, 0, 0, 0.28);
 }
 
 @theme {
-  /* ── Font ── */
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-
-  /* ── Surfaces ── */
+  --font-sans: "Manrope", system-ui, sans-serif;
   --color-surface: var(--surface);
-  --color-surface-lowest: var(--surface-lowest);
-  --color-surface-low: var(--surface-low);
-  --color-surface-mid: var(--surface-mid);
-  --color-surface-high: var(--surface-high);
-  --color-surface-highest: var(--surface-highest);
-
-  /* ── Text ── */
+  --color-panel: var(--panel);
+  --color-panel-muted: var(--panel-muted);
+  --color-panel-elevated: var(--panel-elevated);
   --color-on-surface: var(--on-surface);
   --color-on-surface-variant: var(--on-surface-variant);
   --color-on-surface-muted: var(--on-surface-muted);
-
-  /* ── Accents ── */
+  --color-muted-accent: var(--muted-accent);
   --color-primary: var(--primary);
-  --color-primary-hover: var(--primary-hover);
   --color-primary-soft: var(--primary-soft);
-  --color-secondary: var(--secondary);
-  --color-secondary-soft: var(--secondary-soft);
-  --color-secondary-glow: var(--secondary-glow);
-
-  /* ── Semantic ── */
   --color-income: var(--income);
   --color-income-soft: var(--income-soft);
   --color-expense: var(--expense);
   --color-expense-soft: var(--expense-soft);
-
-  /* ── Category Foregrounds ── */
-  --color-cat-salary: var(--cat-salary);
-  --color-cat-rent: var(--cat-rent);
-  --color-cat-transport: var(--cat-transport);
-  --color-cat-shopping: var(--cat-shopping);
-  --color-cat-food: var(--cat-food);
-  --color-cat-freelance: var(--cat-freelance);
-  --color-cat-utilities: var(--cat-utilities);
-  --color-cat-other: var(--cat-other);
-
-  /* ── Category Backgrounds ── */
-  --color-cat-salary-bg: var(--cat-salary-bg);
-  --color-cat-rent-bg: var(--cat-rent-bg);
-  --color-cat-transport-bg: var(--cat-transport-bg);
-  --color-cat-shopping-bg: var(--cat-shopping-bg);
-  --color-cat-food-bg: var(--cat-food-bg);
-  --color-cat-freelance-bg: var(--cat-freelance-bg);
-  --color-cat-utilities-bg: var(--cat-utilities-bg);
-  --color-cat-other-bg: var(--cat-other-bg);
-
-  /* ── Effects ── */
   --color-ghost-border: var(--ghost-border);
-  --color-glass-bg: var(--glass-bg);
-  --color-glass-border: var(--glass-border);
+  --color-track: var(--track);
+  --shadow-panel: var(--shadow-panel);
+}
 
-  /* ── Shadows ── */
-  --shadow-ambient: var(--shadow-ambient);
-  --shadow-ambient-hover: var(--shadow-ambient-hover);
-  --shadow-primary: var(--shadow-primary);
+html {
+  background: var(--surface);
+}
 
-  /* ── Radius ── */
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-btn: 10px;
-  --radius-input: 10px;
-  --radius-card: 14px;
-  --radius-modal: 18px;
-  --radius-pill: 999px;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(14, 124, 99, 0.06), transparent 30%),
+    var(--surface);
+  color: var(--on-surface);
+}
 
-  /* ── Spacing Additions ── */
-  --spacing-18: 4.5rem;
-  --spacing-section: 2.5rem;
-  --spacing-container: 1.5rem;
-  --spacing-compact: 0.75rem;
+.dark body {
+  background:
+    radial-gradient(circle at top right, rgba(17, 155, 123, 0.14), transparent 28%),
+    var(--surface);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
 }

@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import type { ReactNode } from "react";
 
 interface NavItemProps {
   icon: ReactNode;
@@ -16,22 +16,13 @@ export default function NavItem({
   return (
     <button
       onClick={onClick}
-      className={`
-        group relative flex w-full items-center gap-3 rounded-btn px-4 py-2.5 text-sm font-medium
-        transition-colors duration-200 ease-smooth
-        ${
-          isActive
-            ? "bg-primary-soft text-primary"
-            : "text-on-surface-variant hover:bg-surface-low hover:text-on-surface"
-        }
-      `}
+      className={`flex min-w-max items-center gap-3 rounded-[16px] px-4 py-3 text-left text-[0.95rem] font-medium transition-all duration-200 sm:gap-4 sm:px-5 sm:py-4 sm:text-[1rem] lg:w-full lg:min-w-0 ${
+        isActive
+          ? "bg-primary-soft text-primary shadow-[0_12px_24px_rgba(14,124,99,0.12)]"
+          : "text-on-surface-variant hover:bg-panel-muted hover:text-on-surface"
+      }`}
     >
-      {isActive && (
-        <span className="absolute left-0 top-1/2 h-5 w-0.75 -translate-y-1/2 rounded-full bg-primary" />
-      )}
-
       <span className="flex h-5 w-5 items-center justify-center">{icon}</span>
-
       <span>{label}</span>
     </button>
   );

@@ -1,32 +1,35 @@
-import { useState } from "react";
-import { Sun, Moon } from "lucide-react";
+import { MoonStar, SunMedium } from "lucide-react";
+import { useFinanceApp } from "../../context/FinanceAppContext";
 
 export default function DarkModeToggle() {
-  const [isDark, setIsDark] = useState(false);
+  const {
+    state: { theme },
+    setTheme,
+  } = useFinanceApp();
 
   return (
-    <div className="inline-flex items-center gap-0.5 rounded-pill bg-surface-low p-1">
+    <div className="inline-flex items-center rounded-full bg-panel-muted p-1 shadow-inner shadow-black/5">
       <button
-        onClick={() => setIsDark(false)}
-        className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-xs font-medium transition-colors duration-200 ${
-          !isDark
-            ? "bg-primary text-white"
-            : "text-on-surface-variant hover:text-on-surface"
+        onClick={() => setTheme("light")}
+        className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+          theme === "light"
+            ? "bg-panel text-primary shadow-[0_10px_20px_rgba(15,23,42,0.08)]"
+            : "text-on-surface-muted hover:text-on-surface"
         }`}
+        aria-label="Switch to light mode"
       >
-        <Sun size={14} />
-        Light
+        <SunMedium size={18} />
       </button>
       <button
-        onClick={() => setIsDark(true)}
-        className={`flex items-center gap-1.5 rounded-pill px-3 py-1.5 text-xs font-medium transition-colors duration-200 ${
-          isDark
-            ? "bg-primary text-white"
-            : "text-on-surface-variant hover:text-on-surface"
+        onClick={() => setTheme("dark")}
+        className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+          theme === "dark"
+            ? "bg-primary text-white shadow-[0_10px_20px_rgba(14,124,99,0.24)]"
+            : "text-on-surface-muted hover:text-on-surface"
         }`}
+        aria-label="Switch to dark mode"
       >
-        <Moon size={14} />
-        Dark
+        <MoonStar size={18} />
       </button>
     </div>
   );
